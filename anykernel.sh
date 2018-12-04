@@ -33,7 +33,7 @@ chown -R root:root $ramdisk/*;
 
 
 ## AnyKernel install
-dump_boot;
+split_boot;
 
 # begin ramdisk changes
 
@@ -41,7 +41,7 @@ dump_boot;
 
 # end ramdisk changes
 
-write_boot;
+flash_boot;
 
 ## end install
 
