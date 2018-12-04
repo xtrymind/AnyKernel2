@@ -6,7 +6,7 @@
 properties() { '
 kernel.string=flatKernel for Asus Zenfone Max Pro M1 by @xtrymind
 do.devicecheck=1
-do.modules=0
+do.modules=1
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=ASUS_X00TD
