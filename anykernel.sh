@@ -12,6 +12,7 @@ do.cleanuponabort=0
 device.name1=ASUS_X00TD
 device.name2=WW_X00TD
 device.name3=X00TD
+supported.versions=8.1.0
 '; } # end properties
 
 # shell variables
@@ -28,7 +29,6 @@ ramdisk_compression=auto;
 ## AnyKernel file attributes
 # set permissions/ownership for included ramdisk files
 chmod -R 750 $ramdisk/*;
-chmod -R 755 $ramdisk/sbin;
 chown -R root:root $ramdisk/*;
 
 
