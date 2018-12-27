@@ -1,5 +1,8 @@
 # Everything here won't interfere with qcom-post-boot
 on property:sys.boot_completed=1
+# disable iostat
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk1/queue/iostats 0
 
 # Must be executed after qcom-post-boot
 on property:init.svc.qcom-post-boot=stopped
