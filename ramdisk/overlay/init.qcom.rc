@@ -46,6 +46,7 @@ on property:init.svc.qcom-post-boot=stopped
 
 # Switch to BFQ I/O scheduler
     setprop sys.io.scheduler bfq
+    write /sys/block/mmcblk1/queue/scheduler bfq
 
 # disable thermal core control
     write /sys/module/msm_thermal/core_control/enabled 0
