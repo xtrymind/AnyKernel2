@@ -5,14 +5,14 @@
 # begin properties
 properties() { '
 kernel.string=flatKernel for Asus Zenfone Max Pro M1 by @xtrymind
-do.devicecheck=1
+do.devicecheck=0
 do.modules=1
 do.cleanup=1
 do.cleanuponabort=0
 device.name1=ASUS_X00TD
 device.name2=WW_X00TD
 device.name3=X00TD
-supported.versions=8.1.0
+supported.versions=
 '; } # end properties
 
 # shell variables
