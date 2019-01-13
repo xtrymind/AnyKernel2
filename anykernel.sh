@@ -12,7 +12,8 @@ do.cleanuponabort=0
 device.name1=ASUS_X00TD
 device.name2=WW_X00TD
 device.name3=X00TD
-supported.versions=
+device.name4=X00T
+supported.versions=8.1.0
 '; } # end properties
 
 # shell variables
