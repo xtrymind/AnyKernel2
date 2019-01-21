@@ -8,59 +8,54 @@ on property:sys.boot_completed=1
 # stock value is 512k
     setprop dalvik.vm.heapminfree 2m
 
-# Must be executed after qcom-post-boot
-on property:init.svc.qcom-post-boot=stopped
 # configure governor settings for little cluster
     write /sys/devices/system/cpu/cpu0/online 1
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay "19000 902400:19000 1401600:29000 1612800:39000"
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 96
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay "29000 1113600:39000 1401600:99000"
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 98
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1113600
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "85 1113600:92 1401600:99"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 18000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "70 902400:81 1113600:85 1401600:91 1536000:14 16128000:98"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack 180000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 633600
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 0
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down 1
 
 # configure governor settings for big cluster
     write /sys/devices/system/cpu/cpu4/online 1
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "19000 1401600:19000 1747200:29000 1804800:39000"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/align_windows 0
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost 0
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration 0
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction 0
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 96
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 98
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1401600
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "19000 1401600:99000"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "85 1401600:98"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 18000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 180000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/ignore_hispeed_on_notif 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction 0
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 0
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 59000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 18000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "80 1401600:89 1747200:91 1804800:98"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 180000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 1113600
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down 1
 
-# Switch to BFQ I/O scheduler
-    setprop sys.io.scheduler bfq
-    write /sys/block/mmcblk1/queue/scheduler bfq
+# Scaling Frequency
+    chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chown system /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chown system /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
-# disable thermal core control
-#    write /sys/module/msm_thermal/core_control/enabled 0
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 
-# cpufreq for power cluster
-#    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-#    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1401600
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1536000
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 1747200
