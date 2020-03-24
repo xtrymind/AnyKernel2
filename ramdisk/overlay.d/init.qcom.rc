@@ -1,8 +1,3 @@
-on boot
-# Set SQLite flags for F2FS because some DBs might be opened early
-    setprop debug.sqlite.journalmode OFF
-    setprop debug.sqlite.syncmode OFF
-
 on property:sys.boot_completed=1
     # Setup runtime blkio
     # value for group_idle is us
