@@ -3,3 +3,9 @@ on property:sys.boot_completed=1
     # value for group_idle is us
     write /dev/blkio/blkio.weight 1000
     write /dev/blkio/blkio.group_idle 2000
+
+    exec u:r:magisk:s0 root root -- /sbin/init.flat.sh
+
+# Must be executed after qcom-post-boot
+on property:init.svc.qcom-post-boot=stopped
+    restart vendor.msm_irqbalance
